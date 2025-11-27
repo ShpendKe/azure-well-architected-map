@@ -1,8 +1,25 @@
 import React, { useMemo, useState } from "react";
 import patternsData from "./data/patterns.json";
 import recommendationsData from "./data/recommendations.json";
-import { Pattern, Recommendation } from "./types";
 import styles from "./styles.module.css";
+
+interface Recommendation {
+  id: string;
+  pillar: "reliability" | "security" | "cost" | "operational" | "performance";
+  link: string;
+}
+
+interface Pattern {
+  name: string;
+  link: string;
+  summary: string;
+  reliability: string[]; // array of recommendation IDs
+  security: string[];
+  cost: string[];
+  operational: string[];
+  performance: string[];
+  remarks: string;
+}
 
 const getRecommendationLink = (id: string): React.JSX.Element => {
   const rec = (recommendationsData as Recommendation[]).find(r => r.id === id);

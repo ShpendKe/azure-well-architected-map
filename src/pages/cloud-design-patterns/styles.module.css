@@ -1,0 +1,278 @@
+/* Center wrapper for filters and table */
+.centerWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 12px;
+}
+.controls {    
+  width: 100%;
+  max-width: 1700px;
+  margin: 18px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tableWrap {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  overflow-x: auto;
+  border-radius: 10px;
+}
+/* Table layout for mixed columns */
+.patternsTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--wamp-surface);
+  box-shadow: var(--wamp-card-shadow);
+  table-layout: fixed;
+}
+.patternsTable th,
+.patternsTable td {
+  padding: 14px 12px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--wamp-border);
+  font-size: 14px;
+  color: var(--wamp-text);
+}
+.patternsTable th {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  font-weight: 600;
+  color: var(--wamp-text);
+}
+.patternCol {
+  width: 50%;
+  max-width: 480px;
+  min-width: 220px;
+}
+.patternsTable th:not(.patternCol),
+.patternsTable td:not(.patternCol) {
+  width: 10%;
+  word-break: break-word;
+}
+.patternSummary {
+  margin-top: 4px;
+  font-size: 0.98rem;
+  color: var(--wamp-text);
+}
+.patternTradeoffs {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--wamp-muted);
+}
+
+.container {
+  padding: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--wamp-text);
+  background: var(--wamp-bg);
+}
+
+:root {
+  --wamp-bg: transparent;
+  --wamp-surface: #ffffff;
+  --wamp-text: #111827;
+  --wamp-muted: #6b7280;
+  --wamp-border: #eef2f7;
+  --wamp-card-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  --wamp-accent: #0b63a7;
+  --wamp-pill-bg: #f8fafc;
+  --wamp-input-border: #e6e9ee;
+  --wamp-button: #438a8b;
+}
+
+:global(.theme-dark) {
+  --wamp-bg: #071123;
+  --wamp-surface: #0b1220;
+  --wamp-text: #e6eef8;
+  --wamp-muted: #9aa6b2;
+  --wamp-border: #16202b;
+  --wamp-card-shadow: 0 6px 18px rgba(2,6,23,0.7);
+  --wamp-accent: #4fd1c5;
+  --wamp-pill-bg: rgba(255,255,255,0.03);
+  --wamp-input-border: rgba(255,255,255,0.06);
+  --wamp-button: #0ea5a6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --wamp-bg: #071123;
+    --wamp-surface: #0b1220;
+    --wamp-text: #e6eef8;
+    --wamp-muted: #9aa6b2;
+    --wamp-border: #16202b;
+    --wamp-card-shadow: 0 6px 18px rgba(2,6,23,0.7);
+    --wamp-accent: #4fd1c5;
+    --wamp-pill-bg: rgba(255,255,255,0.03);
+    --wamp-input-border: rgba(255,255,255,0.06);
+    --wamp-button: #0ea5a6;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.topRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  padding: 8px 10px;
+  width: 420px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--wamp-input-border);
+  box-shadow: 0 1px 2px rgba(16,24,40,0.03);
+  font-size: 14px;
+  background: var(--wamp-surface);
+  color: var(--wamp-text);
+}
+
+.clearButton {
+  margin-left: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--wamp-button);
+  color: white;
+  font-weight: 600;
+}
+
+.clearButton:hover {
+  filter: brightness(0.95);
+}
+
+.pillarRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.pillarLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: capitalize;
+  background: var(--wamp-pill-bg);
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--wamp-text);
+  border: 1px solid transparent;
+}
+
+.pillarLabel input {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.pillarLabel span {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: all 180ms ease;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+}
+
+.pillarLabel span {
+  background: var(--wamp-pill-bg);
+}
+
+.pillarLabel input:checked + span {
+  background: var(--wamp-button);
+  color: white;
+  box-shadow: 0 4px 12px rgba(2,6,23,0.12);
+  transform: translateY(-1px);
+  border-color: rgba(0,0,0,0.06);
+}
+
+.pillarLabel:hover span {
+  filter: brightness(0.98);
+}
+.pillarLabel input:focus + span {
+  outline: 3px solid rgba(59,130,246,0.16);
+  outline-offset: 2px;
+}
+
+.count {
+  margin-bottom: 8px;
+  color: var(--wamp-muted);
+  font-size: 14px;
+}
+
+.tableWrap {
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--wamp-surface);
+  box-shadow: var(--wamp-card-shadow);
+}
+
+.thead th {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--wamp-text);
+  border-bottom: 1px solid var(--wamp-border);
+}
+
+.tbody td {
+  padding: 12px 14px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--wamp-border);
+  font-size: 14px;
+  color: var(--wamp-text);
+}
+
+.patternLink {
+  color: var(--wamp-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.patternLink:hover {
+  text-decoration: underline;
+}
+
+.recItem {
+  margin: 2px 0;
+}
+
+.recItem a {
+  color: var(--wamp-accent);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.recItem a:hover {
+  text-decoration: underline;
+}
+
+.noResults {
+  text-align: center;
+  color: var(--wamp-muted);
+  padding: 20px;
+}

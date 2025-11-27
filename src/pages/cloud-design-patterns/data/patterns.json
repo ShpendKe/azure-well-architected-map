@@ -1,0 +1,742 @@
+[
+  {
+    "name": "Ambassador",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/ambassador",
+    "summary": "Create helper services that send network requests on behalf of a consumer service or application.",
+    "reliability": [
+      "RE:07"
+    ],
+    "security": [
+      "SE:06",
+      "SE:07"
+    ],
+    "cost": [],
+    "operational": [],
+    "performance": [],
+    "remarks": "Adds proxy layer with latency overhead. Tradeoff: Standardizes cross-cutting concerns (security, monitoring, retries) but introduces additional processing and deployment complexity."
+  },
+  {
+    "name": "Anti-Corruption Layer",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer",
+    "summary": "Implement a façade or adapter layer between a modern application and a legacy system.",
+    "reliability": [],
+    "security": [],
+    "cost": [],
+    "operational": [
+      "OE:04"
+    ],
+    "performance": [],
+    "remarks": "Adds latency and must be managed separately. Tradeoff: Isolates legacy system complexity and prevents design corruption but adds service overhead and increases management requirements."
+  },
+  {
+    "name": "Asynchronous Request-Reply",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/async-request-reply",
+    "summary": "Decouple backend processing from front-end to enable asynchronous processing.",
+    "reliability": [],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:05",
+      "PE:07"
+    ],
+    "remarks": "Improves client responsiveness and backend decoupling. Tradeoff: Requires reliable message handling, caller must poll/wait for results, and adds overall latency to complete operations."
+  },
+  {
+    "name": "Backends for Frontends",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends",
+    "summary": "Create separate backend services for each frontend client type to tailor APIs for specific needs.",
+    "reliability": [
+      "RE:02",
+      "RE:07"
+    ],
+    "security": [
+      "SE:04",
+      "SE:08"
+    ],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:02",
+      "PE:09"
+    ],
+    "remarks": "Optimizes per-client experiences and reduces API surface area. Tradeoff: Multiple services increase operational overhead, introduce latency from extra network hops, may cause code duplication, and increase management complexity."
+  },
+  {
+    "name": "Bulkhead",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead",
+    "summary": "Isolate resources to prevent failures in one component from cascading to others.",
+    "reliability": [
+      "RE:02",
+      "RE:07"
+    ],
+    "security": [
+      "SE:04"
+    ],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:02",
+      "PE:05"
+    ],
+    "remarks": "Isolates failures and enables independent scaling. Tradeoff: May underutilize resources in isolated partitions, increases complexity in partitioning strategy, and adds overhead per partition."
+  },
+  {
+    "name": "Cache-Aside",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
+    "summary": "Load data into cache only on demand, keeping the cache and database in sync.",
+    "reliability": [
+      "RE:05"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:08",
+      "PE:12"
+    ],
+    "remarks": "Improves read performance for frequently accessed data. Tradeoff: Application must manage cache expiration and invalidation, complexity in maintaining consistency, cache misses still require database hits, and potential for stale data."
+  },
+  {
+    "name": "Choreography",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography",
+    "summary": "Decentralize control for event-driven systems, services respond to events rather than centralized orchestration.",
+    "reliability": [],
+    "security": [],
+    "cost": [],
+    "operational": [
+      "OE:04"
+    ],
+    "performance": [
+      "PE:02",
+      "PE:05"
+    ],
+    "remarks": "Removes central bottleneck and enables independent service updates. Tradeoff: Complex failure handling, difficult to trace execution flow with distributed tracing, harder to manage sequencing, and increased point-to-point communication."
+  },
+  {
+    "name": "Circuit Breaker",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker",
+    "summary": "Detect failures and encapsulate the logic of preventing a failure from constantly recurring.",
+    "reliability": [
+      "RE:03",
+      "RE:07",
+      "Transient faults"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:07",
+      "PE:11"
+    ],
+    "remarks": "Prevents cascading failures and rapid failure detection. Tradeoff: Requires monitoring and threshold configuration, complex exception handling, monitoring overhead, waiting for circuit reset may introduce delays, and needs appropriate timeout tuning."
+  },
+  {
+    "name": "Claim Check",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/claim-check",
+    "summary": "Store large messages externally and pass only a reference in the message pipeline.",
+    "reliability": [
+      "RE:03",
+      "RE:09"
+    ],
+    "security": [
+      "SE:03",
+      "SE:04"
+    ],
+    "cost": [
+      "CO:07",
+      "CO:09"
+    ],
+    "operational": [],
+    "performance": [
+      "PE:05",
+      "PE:12"
+    ],
+    "remarks": "Reduces message size, adds external storage dependency."
+  },
+  {
+    "name": "Compensating Transaction",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction",
+    "summary": "Use a compensation action to undo a previous transaction in a distributed system.",
+    "reliability": [
+      "RE:02",
+      "RE:09"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [],
+    "remarks": "Ensures eventual consistency in distributed transactions. Tradeoff: Adds complexity to design compensation logic, introduces latency from multi-step processes, compensation itself can fail, and difficulty tracking distributed state."
+  },
+  {
+    "name": "Competing Consumers",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/competing-consumers",
+    "summary": "Multiple consumers read from the same queue to improve scalability and performance.",
+    "reliability": [
+      "RE:05",
+      "RE:07"
+    ],
+    "security": [],
+    "cost": [
+      "CO:05",
+      "CO:07"
+    ],
+    "operational": [],
+    "performance": [
+      "PE:05",
+      "PE:07"
+    ],
+    "remarks": "Enables parallel processing, but can introduce contention and complexity."
+  },
+  {
+    "name": "Compute Resource Consolidation",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/compute-resource-consolidation",
+    "summary": "Reduce the number of instances and resources by consolidating workloads on fewer machines.",
+    "reliability": [],
+    "security": [],
+    "cost": [
+      "CO:14"
+    ],
+    "operational": [
+      "OE:07",
+      "OE:10"
+    ],
+    "performance": [
+      "PE:02",
+      "PE:03"
+    ],
+    "remarks": "Saves cost but may create performance bottlenecks."
+  },
+  {
+    "name": "CQRS",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs",
+    "summary": "Separate read and write operations to optimize performance, scalability, and security.",
+    "reliability": [],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:05",
+      "PE:08"
+    ],
+    "remarks": "Improves scalability but adds operational complexity."
+  },
+  {
+    "name": "Deployment Stamps",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp",
+    "summary": "Deploy multiple identical environments to isolate workloads and reduce risk.",
+    "reliability": [],
+    "security": [],
+    "cost": [],
+    "operational": [
+      "OE:05",
+      "OE:11"
+    ],
+    "performance": [
+      "PE:05"
+    ],
+    "remarks": "Improves isolation and reliability but increases deployment and infrastructure cost."
+  },
+  {
+    "name": "Edge Workload Configuration",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/edge-workload-configuration",
+    "summary": "Deploy workloads closer to the edge to reduce latency and improve responsiveness.",
+    "reliability": [],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [],
+    "remarks": "Reduces latency but may complicate management and monitoring."
+  },
+  {
+    "name": "Event Sourcing",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing",
+    "summary": "Store all changes to an application state as a sequence of events.",
+    "reliability": [
+      "RE:06",
+      "RE:09"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:08"
+    ],
+    "remarks": "Enables auditability and temporal queries but increases storage and processing complexity."
+  },
+  {
+    "name": "External Configuration Store",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/external-configuration-store",
+    "summary": "Keep configuration separate from code and deploy it externally.",
+    "reliability": [],
+    "security": [],
+    "cost": [],
+    "operational": [
+      "OE:10",
+      "OE:11"
+    ],
+    "performance": [],
+    "remarks": "Centralizes configuration management but introduces dependency on external service."
+  },
+  {
+    "name": "Federated Identity",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/federated-identity",
+    "summary": "Enable single sign-on and identity federation across multiple systems.",
+    "reliability": [
+      "RE:02",
+      "RE:09"
+    ],
+    "security": [
+      "SE:02",
+      "SE:10"
+    ],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:03"
+    ],
+    "remarks": "Improves security and user experience but adds identity management complexity."
+  },
+  {
+    "name": "Gatekeeper",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/gatekeeper",
+    "summary": "Acts as a façade/gateway to validate and sanitize external requests before they reach internal services.",
+    "reliability": [],
+    "security": [
+      "SE:06",
+      "SE:10"
+    ],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:03"
+    ],
+    "remarks": "Centralizes security checks but can become a bottleneck if misconfigured."
+  },
+  {
+    "name": "Gateway Aggregation",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation",
+    "summary": "Combine multiple backend services into a single endpoint to simplify client calls.",
+    "reliability": [
+      "RE:07"
+    ],
+    "security": [
+      "SE:04",
+      "SE:08"
+    ],
+    "cost": [],
+    "operational": [
+      "OE:04"
+    ],
+    "performance": [
+      "PE:03",
+      "PE:08"
+    ],
+    "remarks": "Simplifies client integration but adds gateway processing overhead."
+  },
+  {
+    "name": "Gateway Offloading",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-offloading",
+    "summary": "Offload cross-cutting concerns (like SSL termination) to a gateway service.",
+    "reliability": [
+      "RE:01"
+    ],
+    "security": [
+      "SE:06",
+      "SE:08"
+    ],
+    "cost": [
+      "CO:14"
+    ],
+    "operational": [
+      "OE:04"
+    ],
+    "performance": [
+      "PE:03"
+    ],
+    "remarks": "Reduces backend load but adds gateway dependency."
+  },
+  {
+    "name": "Gateway Routing",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-routing",
+    "summary": "Route client requests to appropriate backend services via a gateway.",
+    "reliability": [
+      "RE:05",
+      "RE:10"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [
+      "OE:04",
+      "OE:11"
+    ],
+    "performance": [
+      "PE:05"
+    ],
+    "remarks": "Centralizes routing but may increase latency and dependency on gateway."
+  },
+  {
+    "name": "Geode",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/geodes",
+    "summary": "Segment the network or application into zones for isolation and performance.",
+    "reliability": [
+      "RE:05",
+      "region availability zones"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:03"
+    ],
+    "remarks": "Improves isolation but adds deployment complexity."
+  },
+  {
+    "name": "Health Endpoint Monitoring",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/health-endpoint-monitoring",
+    "summary": "Expose application health via a dedicated endpoint to allow monitoring.",
+    "reliability": [
+      "RE:07",
+      "RE:10"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [
+      "OE:07"
+    ],
+    "performance": [
+      "PE:05"
+    ],
+    "remarks": "Enables observability but adds maintenance overhead."
+  },
+  {
+    "name": "Index Table",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/index-table",
+    "summary": "Maintain an index table to improve query performance and scalability.",
+    "reliability": [
+      "RE:06",
+      "RE:09"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:05",
+      "PE:08"
+    ],
+    "remarks": "Improves query efficiency but requires additional storage and update logic."
+  },
+  {
+    "name": "Leader Election",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/leader-election",
+    "summary": "Select a leader among distributed components to coordinate actions and avoid conflicts.",
+    "reliability": [
+      "RE:05",
+      "RE:07"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [],
+    "remarks": "Ensures coordinated behavior but adds leader selection complexity."
+  },
+  {
+    "name": "Materialized View",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/materialized-view",
+    "summary": "Precompute and store query results to improve read performance.",
+    "reliability": [],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:08"
+    ],
+    "remarks": "Faster reads but increases storage and maintenance complexity."
+  },
+  {
+    "name": "Messaging Bridge",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/messaging-bridge",
+    "summary": "Translate messages between different messaging systems.",
+    "reliability": [],
+    "security": [],
+    "cost": [
+      "CO:07"
+    ],
+    "operational": [
+      "OE:06"
+    ],
+    "performance": [],
+    "remarks": "Enables interoperability but adds latency and complexity."
+  },
+  {
+    "name": "Pipes and Filters",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/pipes-and-filters",
+    "summary": "Break a task into a series of processing steps connected by channels.",
+    "reliability": [
+      "RE:01",
+      "RE:07"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [],
+    "remarks": "Improves modularity but adds latency due to multiple processing steps."
+  },
+  {
+    "name": "Priority Queue",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/priority-queue",
+    "summary": "Process messages based on priority levels to improve responsiveness for important tasks.",
+    "reliability": [
+      "RE:02",
+      "RE:07"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:09"
+    ],
+    "remarks": "Prioritizes critical tasks but may delay lower-priority messages."
+  },
+  {
+    "name": "Publisher/Subscriber",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber",
+    "summary": "Decouple producers and consumers using a message broker for event distribution.",
+    "reliability": [
+      "RE:03",
+      "RE:07"
+    ],
+    "security": [
+      "SE:04"
+    ],
+    "cost": [
+      "CO:05",
+      "CO:12"
+    ],
+    "operational": [
+      "OE:06",
+      "OE:11"
+    ],
+    "performance": [
+      "PE:02",
+      "PE:05"
+    ],
+    "remarks": "Improves scalability but increases operational complexity."
+  },
+  {
+    "name": "Quarantine",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/quarantine",
+    "summary": "Isolate problematic data or processes to prevent affecting the main workflow.",
+    "reliability": [],
+    "security": [
+      "SE:02",
+      "SE:11"
+    ],
+    "cost": [],
+    "operational": [
+      "OE:03",
+      "OE:11"
+    ],
+    "performance": [],
+    "remarks": "Protects system integrity but adds operational overhead."
+  },
+  {
+    "name": "Queue-Based Load Leveling",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling",
+    "summary": "Use queues to smooth out bursts in workload and prevent backend overload.",
+    "reliability": [
+      "RE:06",
+      "RE:07"
+    ],
+    "security": [],
+    "cost": [
+      "CO:12"
+    ],
+    "operational": [],
+    "performance": [
+      "PE:05"
+    ],
+    "remarks": "Reduces backend stress but may increase latency for individual requests."
+  },
+  {
+    "name": "Rate Limiting",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/rate-limiting-pattern",
+    "summary": "Limit the number of requests or actions to protect system resources.",
+    "reliability": [
+      "RE:07"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [],
+    "remarks": "Protects resources but may deny legitimate requests during spikes."
+  },
+  {
+    "name": "Retry",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/retry",
+    "summary": "Automatically retry failed operations to handle transient faults.",
+    "reliability": [
+      "RE:07",
+      "Transient faults"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [],
+    "remarks": "Improves reliability but can increase load if misconfigured."
+  },
+  {
+    "name": "Saga",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/saga",
+    "summary": "Manage long-running transactions in distributed systems with compensating actions.",
+    "reliability": [],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [],
+    "remarks": "Ensures consistency but adds operational complexity and latency."
+  },
+  {
+    "name": "Scheduler Agent Supervisor",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/scheduler-agent-supervisor",
+    "summary": "Coordinate scheduled tasks and supervise their execution to ensure reliability.",
+    "reliability": [
+      "RE:05",
+      "RE:07"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [
+      "PE:05",
+      "PE:09"
+    ],
+    "remarks": "Improves reliability but increases orchestration complexity."
+  },
+  {
+    "name": "Sequential Convoy",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/sequential-convoy",
+    "summary": "Prevent head-of-line blocking by processing requests sequentially when needed.",
+    "reliability": [
+      "RE:02",
+      "RE:07"
+    ],
+    "security": [],
+    "cost": [],
+    "operational": [],
+    "performance": [],
+    "remarks": "Prevents deadlocks but reduces throughput."
+  },
+  {
+    "name": "Sharding",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/sharding",
+    "summary": "Partition data across multiple databases to scale out workloads.",
+    "reliability": [
+      "RE:06",
+      "RE:07"
+    ],
+    "security": [],
+    "cost": [
+      "CO:07"
+    ],
+    "operational": [],
+    "performance": [
+      "PE:05",
+      "PE:08"
+    ],
+    "remarks": "Improves scalability but adds operational and query complexity."
+  },
+  {
+    "name": "Sidecar",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/sidecar",
+    "summary": "Deploy helper services alongside main services to provide additional capabilities.",
+    "reliability": [],
+    "security": [
+      "SE:04",
+      "SE:07"
+    ],
+    "cost": [],
+    "operational": [
+      "OE:04",
+      "OE:07"
+    ],
+    "performance": [
+      "PE:07"
+    ],
+    "remarks": "Adds modular functionality but increases resource usage."
+  },
+  {
+    "name": "Static Content Hosting",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/static-content-hosting",
+    "summary": "Serve static content from a dedicated service or storage to improve performance and scalability.",
+    "reliability": [],
+    "security": [],
+    "cost": [
+      "CO:09",
+      "CO:10"
+    ],
+    "operational": [],
+    "performance": [
+      "PE:07"
+    ],
+    "remarks": "Improves performance but may require additional storage and CDN configuration."
+  },
+  {
+    "name": "Strangler Fig",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/strangler-fig",
+    "summary": "Incrementally replace parts of a legacy system by routing functionality to new services.",
+    "reliability": [
+      "RE:08"
+    ],
+    "security": [],
+    "cost": [
+      "CO:07",
+      "CO:08"
+    ],
+    "operational": [
+      "OE:06",
+      "OE:11"
+    ],
+    "performance": [],
+    "remarks": "Enables gradual migration but adds routing complexity."
+  },
+  {
+    "name": "Throttling",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/throttling",
+    "summary": "Limit the number of operations a client can perform within a timeframe.",
+    "reliability": [
+      "RE:07"
+    ],
+    "security": [
+      "SE:06",
+      "SE:08"
+    ],
+    "cost": [
+      "CO:02",
+      "CO:12"
+    ],
+    "operational": [],
+    "performance": [
+      "PE:02",
+      "PE:05"
+    ],
+    "remarks": "Protects system resources but may impact client experience."
+  },
+  {
+    "name": "Valet Key",
+    "link": "https://learn.microsoft.com/en-us/azure/architecture/patterns/valet-key",
+    "summary": "Provide clients with restricted, direct access to a specific resource using tokens or keys.",
+    "reliability": [],
+    "security": [
+      "SE:05"
+    ],
+    "cost": [
+      "CO:09"
+    ],
+    "operational": [],
+    "performance": [
+      "PE:07"
+    ],
+    "remarks": "Enables secure direct access but adds key management complexity."
+  }
+]

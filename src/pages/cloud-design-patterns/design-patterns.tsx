@@ -1,43 +1,42 @@
 import React, { useMemo, useState } from "react";
-import patternsData from "./data/patterns.json";
-import recommendationsData from "./data/recommendations.json";
+import designPatterns from "./data/design-patterns.json";
+import designStrategies from "./data/design-strategies.json";
 import styles from "./styles.module.css";
 
-interface Recommendation {
+interface DesignStrategy {
   id: string;
   pillar: "reliability" | "security" | "cost" | "operational" | "performance";
   link: string;
 }
 
-interface Pattern {
+interface DesignPattern {
   name: string;
   link: string;
   summary: string;
-  reliability: string[]; // array of recommendation IDs
+  tradeoffs: string;
+  reliability: string[];
   security: string[];
   cost: string[];
   operational: string[];
   performance: string[];
-  remarks: string;
 }
 
-const getRecommendationLink = (id: string): React.JSX.Element => {
-  const rec = (recommendationsData as Recommendation[]).find(r => r.id === id);
-  if (!rec) return <div key={id} className={styles.recItem}>{id}</div>;
+const renderDesignStrategy = (id: string): React.JSX.Element => {
+  const designStrategy = (designStrategies as DesignStrategy[]).find(r => r.id === id);
 
-  return (
+  return designStrategy ? (
     <div key={id} className={styles.recItem}>
-      <a href={rec.link} target="_blank" rel="noopener noreferrer">{rec.id}</a>
+      <a href={designStrategy.link} target="_blank" rel="noopener noreferrer">{designStrategy.id}</a>
     </div>
-  );
+  ) : <div key={id} className={styles.recItem}>{id}</div>;
 };
 
 const renderPillar = (pillar: string[]) => {
   if (!pillar || pillar.length === 0) return <div></div>;
-  return pillar.map((id) => getRecommendationLink(id));
+  return pillar.map((id) => renderDesignStrategy(id));
 };
 
-const pillarKeyToField: { [key: string]: keyof Pattern } = {
+const pillarKeyToField: { [key: string]: keyof DesignPattern } = {
   reliability: "reliability",
   security: "security",
   cost: "cost",
@@ -45,8 +44,8 @@ const pillarKeyToField: { [key: string]: keyof Pattern } = {
   performance: "performance",
 };
 
-const Patterns: React.FC = () => {
-  const patterns: Pattern[] = patternsData;
+const DesignPatterns: React.FC = () => {
+  const patterns: DesignPattern[] = designPatterns;
 
   const [search, setSearch] = useState<string>("");
   const [selectedPillars, setSelectedPillars] = useState<Record<string, boolean>>({
@@ -142,7 +141,7 @@ const Patterns: React.FC = () => {
                   <td className={styles.patternCol}>
                     <a className={styles.patternLink} href={p.link} target="_blank" rel="noopener noreferrer">{idx + 1}. {p.name}</a><br />
                     <div className={styles.patternSummary}>{p.summary}</div>
-                    <div className={styles.patternTradeoffs}><b>Tradeoffs:</b> {p.remarks}</div>
+                    <div className={styles.patternTradeoffs}><b>Tradeoffs:</b> {p.tradeoffs}</div>
                   </td>
                   <td>{renderPillar(p.reliability)}</td>
                   <td>{renderPillar(p.security)}</td>
@@ -159,4 +158,4 @@ const Patterns: React.FC = () => {
   );
 };
 
-export default Patterns;
+export default DesignPatterns;

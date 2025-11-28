@@ -13,7 +13,7 @@
     "cost": [],
     "operational": [],
     "performance": [],
-    "remarks": "Adds proxy layer with latency overhead. Tradeoff: Standardizes cross-cutting concerns (security, monitoring, retries) but introduces additional processing and deployment complexity."
+    "tradeoffs": "Adds proxy layer with latency overhead. Tradeoff: Standardizes cross-cutting concerns (security, monitoring, retries) but introduces additional processing and deployment complexity."
   },
   {
     "name": "Anti-Corruption Layer",
@@ -26,7 +26,7 @@
       "OE:04"
     ],
     "performance": [],
-    "remarks": "Adds latency and must be managed separately. Tradeoff: Isolates legacy system complexity and prevents design corruption but adds service overhead and increases management requirements."
+    "tradeoffs": "Adds latency and must be managed separately. Tradeoff: Isolates legacy system complexity and prevents design corruption but adds service overhead and increases management requirements."
   },
   {
     "name": "Asynchronous Request-Reply",
@@ -40,7 +40,7 @@
       "PE:05",
       "PE:07"
     ],
-    "remarks": "Improves client responsiveness and backend decoupling. Tradeoff: Requires reliable message handling, caller must poll/wait for results, and adds overall latency to complete operations."
+    "tradeoffs": "Improves client responsiveness and backend decoupling. Tradeoff: Requires reliable message handling, caller must poll/wait for results, and adds overall latency to complete operations."
   },
   {
     "name": "Backends for Frontends",
@@ -60,7 +60,7 @@
       "PE:02",
       "PE:09"
     ],
-    "remarks": "Optimizes per-client experiences and reduces API surface area. Tradeoff: Multiple services increase operational overhead, introduce latency from extra network hops, may cause code duplication, and increase management complexity."
+    "tradeoffs": "Optimizes per-client experiences and reduces API surface area. Tradeoff: Multiple services increase operational overhead, introduce latency from extra network hops, may cause code duplication, and increase management complexity."
   },
   {
     "name": "Bulkhead",
@@ -79,7 +79,7 @@
       "PE:02",
       "PE:05"
     ],
-    "remarks": "Isolates failures and enables independent scaling. Tradeoff: May underutilize resources in isolated partitions, increases complexity in partitioning strategy, and adds overhead per partition."
+    "tradeoffs": "Isolates failures and enables independent scaling. Tradeoff: May underutilize resources in isolated partitions, increases complexity in partitioning strategy, and adds overhead per partition."
   },
   {
     "name": "Cache-Aside",
@@ -95,7 +95,7 @@
       "PE:08",
       "PE:12"
     ],
-    "remarks": "Improves read performance for frequently accessed data. Tradeoff: Application must manage cache expiration and invalidation, complexity in maintaining consistency, cache misses still require database hits, and potential for stale data."
+    "tradeoffs": "Improves read performance for frequently accessed data. Tradeoff: Application must manage cache expiration and invalidation, complexity in maintaining consistency, cache misses still require database hits, and potential for stale data."
   },
   {
     "name": "Choreography",
@@ -111,7 +111,7 @@
       "PE:02",
       "PE:05"
     ],
-    "remarks": "Removes central bottleneck and enables independent service updates. Tradeoff: Complex failure handling, difficult to trace execution flow with distributed tracing, harder to manage sequencing, and increased point-to-point communication."
+    "tradeoffs": "Removes central bottleneck and enables independent service updates. Tradeoff: Complex failure handling, difficult to trace execution flow with distributed tracing, harder to manage sequencing, and increased point-to-point communication."
   },
   {
     "name": "Circuit Breaker",
@@ -129,7 +129,7 @@
       "PE:07",
       "PE:11"
     ],
-    "remarks": "Prevents cascading failures and rapid failure detection. Tradeoff: Requires monitoring and threshold configuration, complex exception handling, monitoring overhead, waiting for circuit reset may introduce delays, and needs appropriate timeout tuning."
+    "tradeoffs": "Prevents cascading failures and rapid failure detection. Tradeoff: Requires monitoring and threshold configuration, complex exception handling, monitoring overhead, waiting for circuit reset may introduce delays, and needs appropriate timeout tuning."
   },
   {
     "name": "Claim Check",
@@ -152,7 +152,7 @@
       "PE:05",
       "PE:12"
     ],
-    "remarks": "Reduces message size, adds external storage dependency."
+    "tradeoffs": "Reduces message size, adds external storage dependency."
   },
   {
     "name": "Compensating Transaction",
@@ -166,7 +166,7 @@
     "cost": [],
     "operational": [],
     "performance": [],
-    "remarks": "Ensures eventual consistency in distributed transactions. Tradeoff: Adds complexity to design compensation logic, introduces latency from multi-step processes, compensation itself can fail, and difficulty tracking distributed state."
+    "tradeoffs": "Ensures eventual consistency in distributed transactions. Tradeoff: Adds complexity to design compensation logic, introduces latency from multi-step processes, compensation itself can fail, and difficulty tracking distributed state."
   },
   {
     "name": "Competing Consumers",
@@ -186,7 +186,7 @@
       "PE:05",
       "PE:07"
     ],
-    "remarks": "Enables parallel processing, but can introduce contention and complexity."
+    "tradeoffs": "Enables parallel processing, but can introduce contention and complexity."
   },
   {
     "name": "Compute Resource Consolidation",
@@ -205,7 +205,7 @@
       "PE:02",
       "PE:03"
     ],
-    "remarks": "Saves cost but may create performance bottlenecks."
+    "tradeoffs": "Saves cost but may create performance bottlenecks."
   },
   {
     "name": "CQRS",
@@ -219,7 +219,7 @@
       "PE:05",
       "PE:08"
     ],
-    "remarks": "Improves scalability but adds operational complexity."
+    "tradeoffs": "Improves scalability but adds operational complexity."
   },
   {
     "name": "Deployment Stamps",
@@ -235,7 +235,7 @@
     "performance": [
       "PE:05"
     ],
-    "remarks": "Improves isolation and reliability but increases deployment and infrastructure cost."
+    "tradeoffs": "Improves isolation and reliability but increases deployment and infrastructure cost."
   },
   {
     "name": "Edge Workload Configuration",
@@ -246,7 +246,7 @@
     "cost": [],
     "operational": [],
     "performance": [],
-    "remarks": "Reduces latency but may complicate management and monitoring."
+    "tradeoffs": "Reduces latency but may complicate management and monitoring."
   },
   {
     "name": "Event Sourcing",
@@ -262,7 +262,7 @@
     "performance": [
       "PE:08"
     ],
-    "remarks": "Enables auditability and temporal queries but increases storage and processing complexity."
+    "tradeoffs": "Enables auditability and temporal queries but increases storage and processing complexity."
   },
   {
     "name": "External Configuration Store",
@@ -276,7 +276,7 @@
       "OE:11"
     ],
     "performance": [],
-    "remarks": "Centralizes configuration management but introduces dependency on external service."
+    "tradeoffs": "Centralizes configuration management but introduces dependency on external service."
   },
   {
     "name": "Federated Identity",
@@ -295,7 +295,7 @@
     "performance": [
       "PE:03"
     ],
-    "remarks": "Improves security and user experience but adds identity management complexity."
+    "tradeoffs": "Improves security and user experience but adds identity management complexity."
   },
   {
     "name": "Gatekeeper",
@@ -311,7 +311,7 @@
     "performance": [
       "PE:03"
     ],
-    "remarks": "Centralizes security checks but can become a bottleneck if misconfigured."
+    "tradeoffs": "Centralizes security checks but can become a bottleneck if misconfigured."
   },
   {
     "name": "Gateway Aggregation",
@@ -332,7 +332,7 @@
       "PE:03",
       "PE:08"
     ],
-    "remarks": "Simplifies client integration but adds gateway processing overhead."
+    "tradeoffs": "Simplifies client integration but adds gateway processing overhead."
   },
   {
     "name": "Gateway Offloading",
@@ -354,7 +354,7 @@
     "performance": [
       "PE:03"
     ],
-    "remarks": "Reduces backend load but adds gateway dependency."
+    "tradeoffs": "Reduces backend load but adds gateway dependency."
   },
   {
     "name": "Gateway Routing",
@@ -373,7 +373,7 @@
     "performance": [
       "PE:05"
     ],
-    "remarks": "Centralizes routing but may increase latency and dependency on gateway."
+    "tradeoffs": "Centralizes routing but may increase latency and dependency on gateway."
   },
   {
     "name": "Geode",
@@ -381,7 +381,7 @@
     "summary": "Segment the network or application into zones for isolation and performance.",
     "reliability": [
       "RE:05",
-      "region availability zones"
+      "Region availability zones"
     ],
     "security": [],
     "cost": [],
@@ -389,7 +389,7 @@
     "performance": [
       "PE:03"
     ],
-    "remarks": "Improves isolation but adds deployment complexity."
+    "tradeoffs": "Improves isolation but adds deployment complexity."
   },
   {
     "name": "Health Endpoint Monitoring",
@@ -407,7 +407,7 @@
     "performance": [
       "PE:05"
     ],
-    "remarks": "Enables observability but adds maintenance overhead."
+    "tradeoffs": "Enables observability but adds maintenance overhead."
   },
   {
     "name": "Index Table",
@@ -424,7 +424,7 @@
       "PE:05",
       "PE:08"
     ],
-    "remarks": "Improves query efficiency but requires additional storage and update logic."
+    "tradeoffs": "Improves query efficiency but requires additional storage and update logic."
   },
   {
     "name": "Leader Election",
@@ -438,7 +438,7 @@
     "cost": [],
     "operational": [],
     "performance": [],
-    "remarks": "Ensures coordinated behavior but adds leader selection complexity."
+    "tradeoffs": "Ensures coordinated behavior but adds leader selection complexity."
   },
   {
     "name": "Materialized View",
@@ -451,7 +451,7 @@
     "performance": [
       "PE:08"
     ],
-    "remarks": "Faster reads but increases storage and maintenance complexity."
+    "tradeoffs": "Faster reads but increases storage and maintenance complexity."
   },
   {
     "name": "Messaging Bridge",
@@ -466,7 +466,7 @@
       "OE:06"
     ],
     "performance": [],
-    "remarks": "Enables interoperability but adds latency and complexity."
+    "tradeoffs": "Enables interoperability but adds latency and complexity."
   },
   {
     "name": "Pipes and Filters",
@@ -480,7 +480,7 @@
     "cost": [],
     "operational": [],
     "performance": [],
-    "remarks": "Improves modularity but adds latency due to multiple processing steps."
+    "tradeoffs": "Improves modularity but adds latency due to multiple processing steps."
   },
   {
     "name": "Priority Queue",
@@ -496,7 +496,7 @@
     "performance": [
       "PE:09"
     ],
-    "remarks": "Prioritizes critical tasks but may delay lower-priority messages."
+    "tradeoffs": "Prioritizes critical tasks but may delay lower-priority messages."
   },
   {
     "name": "Publisher/Subscriber",
@@ -521,7 +521,7 @@
       "PE:02",
       "PE:05"
     ],
-    "remarks": "Improves scalability but increases operational complexity."
+    "tradeoffs": "Improves scalability but increases operational complexity."
   },
   {
     "name": "Quarantine",
@@ -538,7 +538,7 @@
       "OE:11"
     ],
     "performance": [],
-    "remarks": "Protects system integrity but adds operational overhead."
+    "tradeoffs": "Protects system integrity but adds operational overhead."
   },
   {
     "name": "Queue-Based Load Leveling",
@@ -556,7 +556,7 @@
     "performance": [
       "PE:05"
     ],
-    "remarks": "Reduces backend stress but may increase latency for individual requests."
+    "tradeoffs": "Reduces backend stress but may increase latency for individual requests."
   },
   {
     "name": "Rate Limiting",
@@ -569,7 +569,7 @@
     "cost": [],
     "operational": [],
     "performance": [],
-    "remarks": "Protects resources but may deny legitimate requests during spikes."
+    "tradeoffs": "Protects resources but may deny legitimate requests during spikes."
   },
   {
     "name": "Retry",
@@ -583,7 +583,7 @@
     "cost": [],
     "operational": [],
     "performance": [],
-    "remarks": "Improves reliability but can increase load if misconfigured."
+    "tradeoffs": "Improves reliability but can increase load if misconfigured."
   },
   {
     "name": "Saga",
@@ -594,7 +594,7 @@
     "cost": [],
     "operational": [],
     "performance": [],
-    "remarks": "Ensures consistency but adds operational complexity and latency."
+    "tradeoffs": "Ensures consistency but adds operational complexity and latency."
   },
   {
     "name": "Scheduler Agent Supervisor",
@@ -611,7 +611,7 @@
       "PE:05",
       "PE:09"
     ],
-    "remarks": "Improves reliability but increases orchestration complexity."
+    "tradeoffs": "Improves reliability but increases orchestration complexity."
   },
   {
     "name": "Sequential Convoy",
@@ -625,7 +625,7 @@
     "cost": [],
     "operational": [],
     "performance": [],
-    "remarks": "Prevents deadlocks but reduces throughput."
+    "tradeoffs": "Prevents deadlocks but reduces throughput."
   },
   {
     "name": "Sharding",
@@ -644,7 +644,7 @@
       "PE:05",
       "PE:08"
     ],
-    "remarks": "Improves scalability but adds operational and query complexity."
+    "tradeoffs": "Improves scalability but adds operational and query complexity."
   },
   {
     "name": "Sidecar",
@@ -663,7 +663,7 @@
     "performance": [
       "PE:07"
     ],
-    "remarks": "Adds modular functionality but increases resource usage."
+    "tradeoffs": "Adds modular functionality but increases resource usage."
   },
   {
     "name": "Static Content Hosting",
@@ -679,7 +679,7 @@
     "performance": [
       "PE:07"
     ],
-    "remarks": "Improves performance but may require additional storage and CDN configuration."
+    "tradeoffs": "Improves performance but may require additional storage and CDN configuration."
   },
   {
     "name": "Strangler Fig",
@@ -698,7 +698,7 @@
       "OE:11"
     ],
     "performance": [],
-    "remarks": "Enables gradual migration but adds routing complexity."
+    "tradeoffs": "Enables gradual migration but adds routing complexity."
   },
   {
     "name": "Throttling",
@@ -720,7 +720,7 @@
       "PE:02",
       "PE:05"
     ],
-    "remarks": "Protects system resources but may impact client experience."
+    "tradeoffs": "Protects system resources but may impact client experience."
   },
   {
     "name": "Valet Key",
@@ -737,6 +737,6 @@
     "performance": [
       "PE:07"
     ],
-    "remarks": "Enables secure direct access but adds key management complexity."
+    "tradeoffs": "Enables secure direct access but adds key management complexity."
   }
 ]

@@ -47,7 +47,7 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-  
+
   scripts: [
     {
       src: 'https://nullitics.com/script.js',
@@ -72,9 +72,8 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-      ],
-      copyright: `Created by Shpend Kelmendi, Software Engineer & Architect`,
+      links: [],
+      copyright: `Created by <a target="_blank" rel="noreferrer noopener" aria-label="About Shpend Kelmendi" href="https://shpend-kelmendi.ch/authors/shpendkelmendi">Shpend Kelmendi</a>, Software Engineer & Architect`,
     },
     prism: {
       theme: prismThemes.github,

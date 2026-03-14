@@ -1,0 +1,199 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+  color: var(--wamp-text);
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--wamp-text);
+}
+
+.subheading {
+  font-size: 1.05rem;
+  color: var(--wamp-muted);
+  max-width: 780px;
+  margin: 0 auto 16px;
+  line-height: 1.6;
+}
+
+.docsLink {
+  display: inline-block;
+  color: var(--wamp-accent);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.docsLink:hover {
+  text-decoration: underline;
+}
+
+/* Pillar filter nav */
+.pillarNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.navBtn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--wamp-input-border);
+  background: var(--wamp-pill-bg);
+  color: var(--wamp-text);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 160ms ease;
+}
+
+.navBtn:hover {
+  filter: brightness(0.92);
+}
+
+.navBtnActive {
+  background: var(--wamp-button);
+  color: #fff;
+  border-color: var(--wamp-button);
+}
+
+/* Pillars grid */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 24px;
+}
+
+/* Pillar card */
+.pillarCard {
+  background: var(--wamp-surface);
+  border-radius: 12px;
+  box-shadow: var(--wamp-card-shadow);
+  border-top: 4px solid transparent;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pillarHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pillarEmoji {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.pillarTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.pillarCode {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--wamp-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pillarLink {
+  margin-left: auto;
+  color: var(--wamp-accent);
+  font-size: 1.1rem;
+  text-decoration: none;
+  opacity: 0.7;
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.pillarLink:hover {
+  opacity: 1;
+}
+
+.pillarDesc {
+  font-size: 0.93rem;
+  color: var(--wamp-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Recommendations */
+.recHeading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--wamp-muted);
+  margin: 0 0 10px;
+}
+
+.recList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.recItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--wamp-text);
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background 140ms ease;
+  font-size: 0.9rem;
+}
+
+.recItem:hover {
+  background: var(--wamp-pill-bg);
+  text-decoration: none;
+  color: var(--wamp-accent);
+}
+
+.recId {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.recTitle {
+  font-size: 0.9rem;
+  color: inherit;
+}
+
+
+@media (max-width: 600px) {
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+}

@@ -1,254 +1,317 @@
 [
     {
         "id": "RE:01",
+        "title": "Simplify",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/simplify"
     },
     {
         "id": "RE:02",
+        "title": "Identify critical flows",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/identify-flows"
     },
     {
         "id": "RE:03",
+        "title": "Failure mode analysis",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/failure-mode-analysis"
     },
     {
         "id": "RE:04",
+        "title": "Define reliability targets",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/metrics"
     },
     {
         "id": "RE:05",
+        "title": "Use redundancy",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/redundancy"
     },
     {
         "id": "RE:06",
+        "title": "Design for scaling",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/scaling"
     },
     {
         "id": "RE:07",
+        "title": "Self-preservation",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/self-preservation"
     },
     {
         "id": "RE:08",
+        "title": "Testing strategy",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/testing-strategy"
     },
     {
         "id": "RE:09",
+        "title": "Disaster recovery",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/disaster-recovery"
     },
     {
         "id": "RE:10",
+        "title": "Monitoring and alerting",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/monitoring-alerting-strategy"
     },
     {
         "id": "SE:01",
+        "title": "Security baseline",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/establish-baseline"
     },
     {
         "id": "SE:02",
+        "title": "Secure development lifecycle",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/secure-development-lifecycle"
     },
     {
         "id": "SE:02.",
+        "title": "Threat modeling",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/threat-model"
     },
     {
         "id": "SE:03",
+        "title": "Data classification",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/data-classification"
     },
     {
         "id": "SE:04",
+        "title": "Segmentation",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/segmentation"
     },
     {
         "id": "SE:05",
+        "title": "Identity and access",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/identity-access"
     },
     {
         "id": "SE:06",
+        "title": "Network security",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/networking"
     },
     {
         "id": "SE:07",
+        "title": "Encryption",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/encryption"
     },
     {
         "id": "SE:08",
+        "title": "Harden resources",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/harden-resources"
     },
     {
         "id": "SE:09",
+        "title": "Application secrets",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/application-secrets"
     },
     {
         "id": "SE:10",
+        "title": "Monitor threats",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/monitor-threats"
     },
     {
         "id": "SE:11",
+        "title": "Security testing",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/test"
     },
     {
         "id": "SE:12",
+        "title": "Incident response",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/security/incident-response"
     },
     {
         "id": "CO:01",
+        "title": "Financial responsibility culture",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/create-culture-financial-responsibility"
     },
     {
         "id": "CO:02",
+        "title": "Cost model",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/cost-model"
     },
     {
         "id": "CO:03",
+        "title": "Collect and review cost data",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/collect-review-cost-data"
     },
     {
         "id": "CO:04",
+        "title": "Spending guardrails",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/set-spending-guardrails"
     },
     {
         "id": "CO:05",
+        "title": "Get best rates",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/get-best-rates"
     },
     {
         "id": "CO:06",
+        "title": "Align usage to billing",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/align-usage-to-billing-increments"
     },
     {
         "id": "CO:07",
+        "title": "Optimize component costs",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/optimize-component-costs"
     },
     {
         "id": "CO:08",
+        "title": "Optimize environment costs",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/optimize-environment-costs"
     },
     {
         "id": "CO:09",
+        "title": "Optimize flow costs",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/optimize-flow-costs"
     },
     {
         "id": "CO:10",
+        "title": "Optimize data costs",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/optimize-data-costs"
     },
     {
         "id": "CO:11",
+        "title": "Optimize code costs",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/optimize-code-costs"
     },
     {
         "id": "CO:12",
+        "title": "Optimize scaling costs",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/optimize-scaling-costs"
     },
     {
         "id": "CO:13",
+        "title": "Optimize personnel time",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/optimize-personnel-time"
     },
     {
         "id": "CO:14",
+        "title": "Consolidation",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/consolidation"
     },
     {
         "id": "Transient faults",
+        "title": "Handle transient faults",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/design-guides/handle-transient-faults"
     },
     {
         "id": "Region availability zones",
+        "title": "Regions and availability zones",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/design-guides/regions-availability-zones"
     },
     {
         "id": "OE:01",
+        "title": "DevOps culture",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/devops-culture"
     },
     {
         "id": "OE:02",
+        "title": "Formalize operations tasks",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/formalize-operations-tasks"
     },
     {
         "id": "OE:03",
+        "title": "Development practices",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/formalize-development-practices"
     },
     {
         "id": "OE:04",
+        "title": "Tools and processes",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/tools-processes"
     },
     {
         "id": "OE:05",
+        "title": "Infrastructure as Code",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/infrastructure-as-code-design"
     },
     {
         "id": "OE:06",
+        "title": "Workload supply chain",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/workload-supply-chain"
     },
     {
         "id": "OE:07",
+        "title": "Observability",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/observability"
     },
     {
         "id": "OE:07.",
+        "title": "Instrument application",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/instrument-application"
     },
     {
         "id": "OE:08",
+        "title": "Incident response",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/incident-response"
     },
     {
         "id": "OE:09",
+        "title": "Automate tasks",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/automate-tasks"
     },
     {
         "id": "OE:10",
+        "title": "Enable automation",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/enable-automation"
     },
     {
         "id": "OE:11",
+        "title": "Safe deployments",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/safe-deployments"
     },
     {
         "id": "PE:01",
+        "title": "Performance targets",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/performance-targets"
     },
     {
         "id": "PE:02",
+        "title": "Capacity planning",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/capacity-planning"
     },
     {
         "id": "PE:03",
+        "title": "Select services",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/select-services"
     },
     {
         "id": "PE:04",
+        "title": "Collect performance data",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/collect-performance-data"
     },
     {
         "id": "PE:05",
+        "title": "Scale and partition",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/scale-partition"
     },
     {
         "id": "PE:06",
+        "title": "Performance testing",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/performance-test"
     },
     {
         "id": "PE:07",
+        "title": "Optimize code and infrastructure",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/optimize-code-infrastructure"
     },
     {
         "id": "PE:08",
+        "title": "Optimize data performance",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/optimize-data-performance"
     },
     {
         "id": "PE:09",
+        "title": "Prioritize critical flows",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/prioritize-critical-flows"
     },
     {
         "id": "PE:10",
+        "title": "Optimize operational tasks",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/optimize-operational-tasks"
     },
     {
         "id": "PE:11",
+        "title": "Respond to live issues",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/respond-live-performance-issues"
     },
     {
         "id": "PE:12",
+        "title": "Continuous optimization",
         "link": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/continuous-performance-optimize"
     }
 ]

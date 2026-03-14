@@ -1,0 +1,179 @@
+[
+  {
+    "category": "Microsoft Learn Paths",
+    "icon": "🎓",
+    "items": [
+      {
+        "title": "Azure Well-Architected Framework",
+        "description": "Official Microsoft Learn module covering all five pillars of the Well-Architected Framework.",
+        "url": "https://learn.microsoft.com/en-us/training/paths/azure-well-architected-framework/",
+        "type": "learning-path",
+        "badge": "Free"
+      },
+      {
+        "title": "Architect great solutions in Azure",
+        "description": "Learn Azure architecture and design principles to build robust, scalable solutions.",
+        "url": "https://learn.microsoft.com/en-us/training/paths/architect-great-solutions-in-azure/",
+        "type": "learning-path",
+        "badge": "Free"
+      },
+      {
+        "title": "Microsoft Azure Architect Design (AZ-305)",
+        "description": "Certification-level learning path covering Azure architecture and design for the AZ-305 exam.",
+        "url": "https://learn.microsoft.com/en-us/training/courses/az-305t00",
+        "type": "certification",
+        "badge": "AZ-305"
+      },
+      {
+        "title": "Designing and Implementing Microsoft DevOps solutions (AZ-400)",
+        "description": "Covers DevOps practices aligned with the Operational Excellence pillar.",
+        "url": "https://learn.microsoft.com/en-us/training/courses/az-400t00",
+        "type": "certification",
+        "badge": "AZ-400"
+      }
+    ]
+  },
+  {
+    "category": "Official Documentation",
+    "icon": "📚",
+    "items": [
+      {
+        "title": "Azure Well-Architected Framework Overview",
+        "description": "The official documentation hub for Azure WAF with pillar guides, design principles, and best practices.",
+        "url": "https://learn.microsoft.com/en-us/azure/well-architected/",
+        "type": "docs",
+        "badge": "Docs"
+      },
+      {
+        "title": "Azure Architecture Center",
+        "description": "Reference architectures, patterns, and best practices for building solutions on Azure.",
+        "url": "https://learn.microsoft.com/en-us/azure/architecture/",
+        "type": "docs",
+        "badge": "Docs"
+      },
+      {
+        "title": "Cloud Design Patterns",
+        "description": "Design patterns for reliability, security, performance, and operational excellence in cloud applications.",
+        "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/",
+        "type": "docs",
+        "badge": "Docs"
+      },
+      {
+        "title": "Azure Well-Architected Review",
+        "description": "An assessment tool to evaluate your workloads against the Well-Architected Framework pillars.",
+        "url": "https://learn.microsoft.com/en-us/assessments/azure-architecture-review/",
+        "type": "tool",
+        "badge": "Tool"
+      }
+    ]
+  },
+  {
+    "category": "Interactive Tools",
+    "icon": "🛠️",
+    "items": [
+      {
+        "title": "Azure Advisor",
+        "description": "A personalized cloud consultant that gives recommendations to optimize your Azure resources based on WAF.",
+        "url": "https://azure.microsoft.com/en-us/products/advisor/",
+        "type": "tool",
+        "badge": "Tool"
+      },
+      {
+        "title": "Azure Pricing Calculator",
+        "description": "Estimate costs for Azure services and optimize spending (Cost Optimization pillar).",
+        "url": "https://azure.microsoft.com/en-us/pricing/calculator/",
+        "type": "tool",
+        "badge": "Tool"
+      },
+      {
+        "title": "Microsoft Defender for Cloud",
+        "description": "Cloud security posture management tool aligned with the Security pillar recommendations.",
+        "url": "https://azure.microsoft.com/en-us/products/defender-for-cloud/",
+        "type": "tool",
+        "badge": "Tool"
+      },
+      {
+        "title": "Azure Monitor",
+        "description": "Comprehensive monitoring solution for Operational Excellence and Reliability pillars.",
+        "url": "https://azure.microsoft.com/en-us/products/monitor/",
+        "type": "tool",
+        "badge": "Tool"
+      }
+    ]
+  },
+  {
+    "category": "GitHub & Community",
+    "icon": "🌐",
+    "items": [
+      {
+        "title": "Azure Well-Architected Framework GitHub",
+        "description": "Community contributions and examples for the Well-Architected Framework on GitHub.",
+        "url": "https://github.com/Azure/Well-Architected-Framework",
+        "type": "github",
+        "badge": "GitHub"
+      },
+      {
+        "title": "Azure Architecture Icons",
+        "description": "Official Azure service icons for use in architecture diagrams.",
+        "url": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
+        "type": "resource",
+        "badge": "Resource"
+      },
+      {
+        "title": "Azure Blog – Architecture",
+        "description": "Latest articles and updates on Azure architecture, design patterns, and WAF best practices.",
+        "url": "https://techcommunity.microsoft.com/t5/azure-architecture-blog/bg-p/AzureArchitectureBlog",
+        "type": "blog",
+        "badge": "Blog"
+      },
+      {
+        "title": "Azure Samples on GitHub",
+        "description": "Reference implementations and code samples for Azure services and WAF-aligned architectures.",
+        "url": "https://github.com/Azure-Samples",
+        "type": "github",
+        "badge": "GitHub"
+      }
+    ]
+  },
+  {
+    "category": "Pillar Deep Dives",
+    "icon": "🔍",
+    "items": [
+      {
+        "title": "Reliability Design Principles",
+        "description": "Learn the core design principles for building reliable workloads on Azure.",
+        "url": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/principles",
+        "type": "docs",
+        "badge": "Reliability"
+      },
+      {
+        "title": "Security Design Principles",
+        "description": "Understand the key security principles for protecting Azure workloads.",
+        "url": "https://learn.microsoft.com/en-us/azure/well-architected/security/principles",
+        "type": "docs",
+        "badge": "Security"
+      },
+      {
+        "title": "Cost Optimization Design Principles",
+        "description": "Explore principles for maximizing the value of your cloud investment.",
+        "url": "https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/principles",
+        "type": "docs",
+        "badge": "Cost"
+      },
+      {
+        "title": "Operational Excellence Design Principles",
+        "description": "Discover how to build and run reliable operations through DevOps and automation.",
+        "url": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/principles",
+        "type": "docs",
+        "badge": "Operations"
+      },
+      {
+        "title": "Performance Efficiency Design Principles",
+        "description": "Learn how to build scalable, high-performing workloads on Azure.",
+        "url": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/principles",
+        "type": "docs",
+        "badge": "Performance"
+      }
+    ]
+  }
+]

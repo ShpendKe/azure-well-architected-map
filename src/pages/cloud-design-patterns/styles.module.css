@@ -71,46 +71,6 @@
   background: var(--wamp-bg);
 }
 
-:root {
-  --wamp-bg: transparent;
-  --wamp-surface: #ffffff;
-  --wamp-text: #111827;
-  --wamp-muted: #6b7280;
-  --wamp-border: #eef2f7;
-  --wamp-card-shadow: 0 6px 18px rgba(15,23,42,0.06);
-  --wamp-accent: #0b63a7;
-  --wamp-pill-bg: #f8fafc;
-  --wamp-input-border: #e6e9ee;
-  --wamp-button: #438a8b;
-}
-
-:global(.theme-dark) {
-  --wamp-bg: #071123;
-  --wamp-surface: #0b1220;
-  --wamp-text: #e6eef8;
-  --wamp-muted: #9aa6b2;
-  --wamp-border: #16202b;
-  --wamp-card-shadow: 0 6px 18px rgba(2,6,23,0.7);
-  --wamp-accent: #4fd1c5;
-  --wamp-pill-bg: rgba(255,255,255,0.03);
-  --wamp-input-border: rgba(255,255,255,0.06);
-  --wamp-button: #0ea5a6;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --wamp-bg: #071123;
-    --wamp-surface: #0b1220;
-    --wamp-text: #e6eef8;
-    --wamp-muted: #9aa6b2;
-    --wamp-border: #16202b;
-    --wamp-card-shadow: 0 6px 18px rgba(2,6,23,0.7);
-    --wamp-accent: #4fd1c5;
-    --wamp-pill-bg: rgba(255,255,255,0.03);
-    --wamp-input-border: rgba(255,255,255,0.06);
-    --wamp-button: #0ea5a6;
-  }
-}
 
 .controls {
   display: flex;

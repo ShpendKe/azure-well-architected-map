@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 
 interface DesignStrategy {
   id: string;
+  title?: string;
   pillar: "reliability" | "security" | "cost" | "operational" | "performance";
   link: string;
 }
@@ -26,7 +27,7 @@ const renderDesignStrategy = (id: string): React.JSX.Element => {
 
   return designStrategy ? (
     <div key={id} className={styles.recItem}>
-      <a href={designStrategy.link} target="_blank" rel="noopener noreferrer">{designStrategy.id}</a>
+      <a href={designStrategy.link} target="_blank" rel="noopener noreferrer" title={designStrategy.title}>{designStrategy.id}</a>
     </div>
   ) : <div key={id} className={styles.recItem}>{id}</div>;
 };

@@ -68,6 +68,21 @@ const config: Config = {
         src: 'img/logo.png',
       },
       items: [
+        {
+          to: '/',
+          label: 'Design Patterns',
+          position: 'left',
+        },
+        {
+          to: '/waf-overview',
+          label: 'WAF Overview',
+          position: 'left',
+        },
+        {
+          to: '/learning-resources',
+          label: 'Learning Resources',
+          position: 'left',
+        },
       ],
     },
     footer: {
